@@ -1,17 +1,31 @@
 package com.example.retrofitapi;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 public class Post {
 
-    @SerializedName("UserId")
+    @SerializedName("userId")
     private int userId;
-    @SerializedName("Id")
-    private int id;
-    @SerializedName("Title")
+    @SerializedName("id")
+    private Integer id;
+    @SerializedName("title")
     private String title;
-    @SerializedName("Body")
+    @SerializedName("body")
     private String text;
+
+    public Post(int userId, String title, String text) {
+        this.userId = userId;
+        this.title = title;
+        this.text = text;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "\nuserId:"+userId+"\nid:"+id+"\ntitle:"+title+"\ntext:"+text;
+    }
 
     public int getUserId() {
         return userId;
@@ -21,7 +35,7 @@ public class Post {
         this.userId = userId;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
